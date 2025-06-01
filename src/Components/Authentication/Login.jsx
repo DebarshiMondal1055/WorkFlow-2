@@ -58,10 +58,15 @@ export default function Login({loginHandler}){
                         onChange={(e)=>{setEmail(e.target.value)}}
                         />
                         
-                        {action==='Sign Up'?<div><input type="text" placeholder="role"
-                        value={role}
-                        onChange={(e)=>{setRole(e.target.value)}} 
-                        className=" border-2 border-amber-50 px-3 py-2.5 rounded-4xl w-full" /></div>:''}
+                        {action==='Sign Up'?<div><select 
+                            value={role}
+                            onChange={(e)=>{setRole(e.target.value)}}
+                            className=" border-2 border-amber-50 px-3 py-2.5 rounded-4xl w-full bg-[#353434] backdrop-blur-sm" >
+                            <option className="text-black bg-[#1c1c1c]" value="">Select Role </option>
+                            <option className="text-black" value="admin">Admin</option>
+                            <option className="text-black" value="employee">Employee</option>
+                        </select>
+                        </div>:''}
                         
                         <input required type="password" name="" id="" placeholder="password" 
                         className="border-2 border-amber-50 px-3 py-2.5 rounded-4xl"
